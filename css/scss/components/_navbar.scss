@@ -1,0 +1,21 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.navbar {
+  display: flex;
+  height: 100%;
+  li {
+    width: 100px;
+    padding: 20px;
+    @include flex();
+    a {
+      display: block;
+      color: $menuColor;
+      font-family: "Poppins", sans-serif;
+      &.active,
+      &:hover {
+        color: $hoverColor;
+      }
+    }
+  }
+}

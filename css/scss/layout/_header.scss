@@ -1,0 +1,14 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+header {
+  background-color: rgba($mainColor, 0.8);
+  height: 65px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  .container {
+    height: 100%;
+    @include flex();
+  }
+}

@@ -1,0 +1,29 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.button {
+  width: fit-content;
+  padding: 15px 20px;
+  background-color: $mainColor;
+  color: $hoverColor;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.5;
+}
+
+.btn {
+  @include rounded(50px);
+  cursor: pointer;
+  text-align: $centeringText;
+  line-height: 2.5;
+  position: fixed;
+  color: $mainColor;
+  font-size: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+  display: none;
+  &:hover {
+    box-shadow: 0px 0px 19px 6px $hoverColor;
+  }
+}

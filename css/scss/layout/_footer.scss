@@ -1,0 +1,67 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+%h2 {
+  font-size: 20px;
+  color: $hoverColor;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: $footerColor;
+  .container {
+    @include grid(500px, 30px);
+    .box-1 {
+      h2 {
+        font: {
+          family: "Merienda One", cursive;
+          weight: 100;
+        }
+        @extend %h2;
+      }
+      p {
+        color: $mainColor;
+        line-height: 2;
+      }
+      .icons {
+        display: flex;
+        margin: 30px 0;
+        li {
+          @include rounded(50px);
+          @include flex();
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+          i {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+    .box-2 {
+      h2 {
+        @extend %h2;
+        font-weight: 400;
+      }
+      .info {
+        margin-bottom: 20px;
+        li {
+          color: $mainColor;
+          padding: 5px 0;
+        }
+      }
+      .icons {
+        display: flex;
+        li {
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+          i {
+            color: $mainColor;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}

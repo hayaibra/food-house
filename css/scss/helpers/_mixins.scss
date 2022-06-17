@@ -1,0 +1,54 @@
+@use "../helpers/variables" as *;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin overly {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin rounded($width) {
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+  background-color: $hoverColor;
+}
+
+@mixin section {
+  position: relative;
+  height: 500px;
+}
+
+@mixin after {
+  content: "";
+  @include overly();
+  background-color: rgba($menuColor, 0.5);
+}
+
+@mixin container {
+  position: absolute;
+  width: 100%;
+  @include flex();
+  z-index: 100;
+  flex-wrap: wrap;
+  color: $mainColor;
+}
+
+@mixin head {
+  width: 100%;
+  text-align: $centeringText;
+  margin-bottom: 10px;
+}
+
+@mixin grid($width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+  gap: $gap;
+}
